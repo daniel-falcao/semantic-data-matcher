@@ -18,20 +18,20 @@ def save_report(stats_list: list[dict], output_path: Path) -> None:
         output_path: Path where the .xlsx report will be saved.
     """
     if not stats_list:
-        logger.warning("No stats to save — report skipped.")
+        logger.warning('No stats to save — report skipped.')
         return
 
     df = pd.DataFrame(stats_list)
     df.columns = [
-        "File",
-        "Total Rows",
-        "Matched",
-        "Not Found",
-        "Success Rate (%)",
-        "Elapsed (s)",
-        "Elapsed (min)",
+        'File',
+        'Total Rows',
+        'Matched',
+        'Not Found',
+        'Success Rate (%)',
+        'Elapsed (s)',
+        'Elapsed (min)',
     ]
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     df.to_excel(output_path, index=False)
-    logger.info(f"Report saved → {output_path}")
+    logger.info(f'Report saved → {output_path}')
