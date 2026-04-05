@@ -13,7 +13,7 @@ class SemanticMatcher:
     Loads the domain table once and reuses embeddings across calls.
     """
 
-    DEFAULT_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
+    DEFAULT_MODEL = 'paraphrase-multilingual-MiniLM-L12-v2'
 
     def __init__(self, domain_descriptions: list[str], model_name: str = DEFAULT_MODEL):
         """
