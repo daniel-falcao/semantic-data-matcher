@@ -22,8 +22,8 @@ def get_logger(name: str, log_file: str | None = None) -> logging.Logger:
 
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(
-        "[%(asctime)s] %(levelname)s %(name)s — %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
+        '[%(asctime)s] %(levelname)s %(name)s — %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
     )
 
     # Console handler
@@ -33,10 +33,10 @@ def get_logger(name: str, log_file: str | None = None) -> logging.Logger:
     logger.addHandler(ch)
 
     # File handler (optional)
-    target = log_file or os.getenv("LOG_PATH")
+    target = log_file or os.getenv('LOG_PATH')
     if target:
         Path(target).parent.mkdir(parents=True, exist_ok=True)
-        fh = logging.FileHandler(target, encoding="utf-8")
+        fh = logging.FileHandler(target, encoding='utf-8')
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         logger.addHandler(fh)
