@@ -1,4 +1,4 @@
-“""
+"""
 Command-line interface for batch processing.
 
 Usage:
@@ -7,7 +7,7 @@ Usage:
                         --output data/output/ \
                         --column description \
                         --threshold 0.75
-“""
+"""
 
 import argparse
 import sys
