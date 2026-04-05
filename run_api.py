@@ -10,10 +10,10 @@ Usage:
 import os
 import uvicorn
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     uvicorn.run(
-        "app.api:app",
-        host=os.getenv("API_HOST", "0.0.0.0"),
-        port=int(os.getenv("PORT", 8000)),
+        'app.api:app',
+        host=os.getenv('API_HOST', '0.0.0.0'),
+        port=int(os.getenv('PORT', 8000)),
         reload=False,
     )
