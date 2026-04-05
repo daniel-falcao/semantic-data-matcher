@@ -146,7 +146,8 @@ async def match_file(
     if source_column not in df.columns:
         raise HTTPException(
             status_code=422,
-            detail=f'Column '{source_column}' not found. Available: {list(df.columns)}',)
+            detail=f'Column {source_column} not found. \
+Available: {list(df.columns)}',)
 
     codes, descriptions, scores = [], [], []
     for value in df[source_column].astype(str):
